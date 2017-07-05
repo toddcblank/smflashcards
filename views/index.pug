@@ -1,0 +1,25 @@
+extends layout
+
+
+block content
+  h1= title
+
+  script.
+    function toggle_visibility(id) {
+      var e = document.getElementById(id);
+      if(e.style.display == 'block')
+        e.style.display = 'none';
+      else
+        e.style.display = 'block';
+    }
+  p Welcome to #{title}
+  img(src=roomImage)
+
+  div#showButton(onclick='toggle_visibility(\"room\")') 
+    p Show/Hide Answer
+
+  div#room
+    p Room: #{roomName}
+
+  div#newRoom(onclick='location.reload()')
+    p New Room!
